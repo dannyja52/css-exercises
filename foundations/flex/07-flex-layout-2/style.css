@@ -1,29 +1,96 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* sets a stack of system + web-safe fonts */
   margin: 0;
+  /* removes browser’s default margin */
   min-height: 100vh;
+  /* makes body at least full viewport height */
+  display: flex;
+  flex-direction: column;
+  /* stack header, main body, footer vertically */
+}
+
+ul {
+  list-style-type: none;
+  /* removes default bullets from lists */
+  margin: 0;
+  padding: 0;
+  /* strips browser defaults for consistent layout */
+}
+
+li {
+  margin-bottom: 16px;
+  /* spaces out each list item vertically */
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  /* removes underline from links */
+  font-size: 24px;
 }
 
 .header {
   height: 72px;
+  /* fixed header height */
   background: darkmagenta;
   color: white;
+  display: flex;
+  align-items: center;
+  /* vertically centers text inside header */
+  padding: 0 16px;
+  /* left/right inner spacing */
+  font-size: 32px;
+  font-weight: 900;
+  /* bold, large title */
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centers footer text horizontally and vertically */
+}
+
+.body {
+  flex: 1;
+  /* grows to fill remaining vertical space */
+  display: flex;
+  /* lays out sidebar and content horizontally */
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
   box-sizing: border-box;
+  /* includes padding in width calculation */
+  flex-shrink: 0;
+  /* prevents sidebar from shrinking on small screens */
+  padding: 16px;
+  /* inner spacing for list links */
+}
+
+.container {
+  padding: 48px;
+  /* large inner spacing around cards */
+  display: flex;
+  flex-wrap: wrap;
+  /* cards will wrap onto new rows */
+  gap: 32px;
+  /* space between cards */
 }
 
 .card {
   border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+  /* subtle border */
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.06);
+  /* soft shadow for depth */
   border-radius: 4px;
+  /* slightly rounded corners */
+  padding: 16px;
+  width: 300px;
+  /* fixed width, height grows with content */
 }
